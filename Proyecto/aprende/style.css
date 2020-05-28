@@ -1,0 +1,69 @@
+.input[type=button]{
+
+    background-color: #006699;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+/* El contenedor de la tarjeta plegable: establece el ancho y la altura como quieras. Hemos agregado la propiedad de borde para demostrar que el flip se sale de la caja al pasar el mouse (elimine la perspectiva si no desea el efecto 3D */
+ .flip-card {
+   position: relative;
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    border: 1px solid aq;
+    perspective: 1000px;
+    display: inline-block;
+  }
+  
+/* Este contenedor es necesario para colocar el anverso y el reverso */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+/* Haga un giro horizontal cuando mueva el mouse sobre el contenedor de la caja del tirón */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Coloque el frente y el reverso */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* Aplicar estilo al anverso (retroceso si falta imagen) */
+  .flip-card-front {
+    background-color: blue;
+    color: black;
+  }
+  
+  /* Dale estilo al reverso */
+  .flip-card-back {
+    background-color: rosybrown;
+    color: black;
+    transform: rotateY(180deg);
+  } 
+
+ /* Three image containers (use 25% for four, and 50% for two, etc) */
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
